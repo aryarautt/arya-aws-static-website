@@ -1,6 +1,5 @@
-﻿# ðŸ“¦ Hosting a Static Website with EC2 and S3
-
-## ðŸ“¥ Clone the Repository
+﻿Hosting a Static Website with EC2 and S3
+Clone the Repository
 
 ```bash
 git clone https://github.com/aryarautt/arya-aws-static-website.git
@@ -9,9 +8,9 @@ cd arya-aws-static-website
 
 ---
 
-## ðŸ“Œ Steps and Commands
+## Steps and Commands
 
-### ðŸ”¹ 1ï¸âƒ£ Launch EC2 Instance and Connect via SSH
+### Launch EC2 Instance and Connect via SSH
 
 * **Launch EC2 Instance:** Use AWS Management Console to create a new EC2 instance.
 * **Connect to EC2:**
@@ -22,7 +21,7 @@ ssh -i /path/to/your-key-pair.pem ec2-user@your-ec2-public-dns
 
 ---
 
-### ðŸ”¹ 2ï¸âƒ£ Install Web Server on EC2
+### Install Web Server on EC2
 
 ```bash
 sudo yum update -y
@@ -46,13 +45,13 @@ sudo nano index.html
 
 ---
 
-### ðŸ”¹ 3ï¸âƒ£ Create an S3 Bucket
+### Create an S3 Bucket
 
 * **AWS Console:** Go to **S3** â†’ **Create bucket** and follow the prompts.
 
 ---
 
-### ðŸ”¹ 4ï¸âƒ£ Apply S3 Bucket Policy
+### Apply S3 Bucket Policy
 
 * **Note your bucket ARN**, and replace `your-bucket-name` below.
 
@@ -73,25 +72,25 @@ sudo nano index.html
 }
 ```
 
-> ðŸ’¡ You can also use the [AWS Policy Generator](https://awspolicygen.s3.amazonaws.com/policygen.html) to create a custom policy.
+> You can also use the [AWS Policy Generator](https://awspolicygen.s3.amazonaws.com/policygen.html) to create a custom policy.
 
 ---
 
-### ðŸ”¹ 5ï¸âƒ£ Upload Image to S3
+### Upload Image to S3
 
 * In the AWS Console, navigate to your bucket.
 * Click **Upload** and select `Coffee.img`.
 
 ---
 
-### ðŸ”¹ 6ï¸âƒ£ Copy Image URL from S3
+### Copy Image URL from S3
 
 * After upload, go to the object details.
 * Copy the **Object URL** (public URL of the image).
 
 ---
 
-### ðŸ”¹ 7ï¸âƒ£ Add Image URL to `index.html`
+### Add Image URL to `index.html`
 
 **Sample `index.html`:**
 
@@ -111,11 +110,11 @@ sudo nano index.html
 
 ```
 
-> ðŸ“Œ Replace the `src` URL with your copied S3 image URL.
+> Replace the `src` URL with your copied S3 image URL.
 
 ---
 
-### ðŸ”¹ 8ï¸âƒ£ Access Your Website via EC2 Public IP
+### Access Your Website via EC2 Public IP
 
 * Find your **EC2 Public DNS/IP**
 * Open your browser and go to:
@@ -126,7 +125,7 @@ http://your-ec2-public-dns
 
 ---
 
-## âœ… Summary
+## Summary
 
 This guide walks you through:
 
